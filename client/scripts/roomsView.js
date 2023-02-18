@@ -11,12 +11,23 @@ var RoomsView = {
     // when this view loads.
   },
 
-  render: function() {
+  render: function(list) {
     // TODO: Render out the list of rooms.
+    var html = '';
+    // iterate over list
+    //for (var roomName in list) {
+    html += RoomView.render(list);
+    //}
+    // check if room has not been rendered, if so,
+    // html += roomView.render(roomName)
+    RoomsView.$select.append(html);
   },
 
   renderRoom: function(roomname) {
     // TODO: Render out a single room.
+    // call addRoom(roomname)
+    var x = {roomName: roomname};
+    RoomsView.render(x);
   },
 
   handleChange: function(event) {
